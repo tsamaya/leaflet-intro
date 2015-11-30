@@ -1,0 +1,28 @@
+{
+  "name": "leaflet-intro",
+  "version": "1.0.0",
+  "authors": [
+    "arnaud ferrand <arferrand@gmail.com>"
+  ],
+  "description": "présentation introduction à Leaflet",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "intro",
+    "introduction",
+    "lefalet"
+  ],
+  "license": "Apache 2.0",
+  "homepage": "http://tsamaya.github.io/Leaflet-intro/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "~3.2.0"
+  }
+}
