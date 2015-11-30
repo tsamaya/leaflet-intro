@@ -95,6 +95,29 @@ polygon.bindPopup('Je suis un  polygone.');
 
 ---
 
+### Geojson
+
+---
+
+### debug
+
+---
+
+# Plugins
+
+- heatmap : http://leaflet.github.io/Leaflet.heat/demo/
+- markercluster
+- un autre
+- lien vers les Plugins
+
+---
+
 # Liens
 - leafletjs : http://leafletjs.com<!-- .element: target="_blank" -->
 - fonds de plan : http://leaflet-extras.github.io/leaflet-providers/preview/<!-- .element: target="_blank" -->
+
+---
+
+#Cool maps
+- http://nimianlegends.com/empires/ <!-- .element: target="_blank" -->
+- http://windyty.com/<!-- .element: target="_blank" -->
