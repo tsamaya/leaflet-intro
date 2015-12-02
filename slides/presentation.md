@@ -12,15 +12,54 @@ Vous pouvez suivre cette présentation en ligne
 
 ---
 
-Recommendations
+Recommandations
 
 - éditeur de texte : [atom.io](http://atom.io)<!-- .element: target="_blank" -->
-- github / gist
-- jsbin
+- navigateur : [chrome](https://www.google.fr/chrome/browser/desktop/)<!-- .element: target="_blank" -->
+- serveur web
+- sinon un compte [github](http://github.com)<!-- .element: target="_blank" --> pour utiliser
+  - [jsbin](http://jsbin.com)<!-- .element: target="_blank" -->
+  - [gist](http://gist.github.com)<!-- .element: target="_blank" --> et http://bl.ocks.org/USER<!-- .element: target="_blank" -->
 
 ---
 
 #Leaflet Quick Start Guide
+
+---
+
+### template
+
+```HTML
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <style type="text/css">
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    #map { height: 100%; }
+
+    html, body {
+      height: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+</head>
+<body>
+  <div id="map"></div>
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <script>
+// ici
+  </script>
+</body>
+</html>
+```
+- jsbin : [jsbin.com/fojeta](http://jsbin.com/fojeta)<!-- .element: target="_blank" -->
+- gist : [gist/593362928b8ee8c185de](https://gist.github.com/tsamaya/593362928b8ee8c185de)<!-- .element: target="_blank" -->
+- bl.ocks.org [bl.ocks.org/593362928b8ee8c185de](http://bl.ocks.org/tsamaya/593362928b8ee8c185de)<!-- .element: target="_blank" -->
 
 ---
 
@@ -95,10 +134,10 @@ polygon.bindPopup('Je suis un  polygone.');
 
 ---
 
-### debug
+### debug et inspection
 <iframe id="aaaaiframedebug" src="demos/demo5.html" style="width:100%; height:350px;"></iframe>
 
-dans l'`iframe aaaaiframedebug`
+Exécuter ce code dans la console pour l'`iframe aaaaiframedebug` (CTRL+SHIT+I) ou (CMD+ALT+I)
 
 ```JS
 map.getCenter();
@@ -112,14 +151,13 @@ map.getPixelBounds();
 ### actions
 <iframe id="aaaaiframeaction" src="demos/demo1.html" style="width:100%; height:350px;"></iframe>
 
-dans l'`iframe aaaaiframeaction`
+Exécuter ce code dans la console pour l'`iframe aaaaiframeaction`
 
 ```JS
 map.setView(L.latLng(50, 2), 5);
 var popup = L.popup().setLatLng([51.52145, -0.20312]);
 popup.setContent('Je suis une pauvre popup solitaire loin de chez elle');
 popup.openOn(map);
-
 ```
 
 ---
@@ -133,21 +171,57 @@ Source de données pour ce soir : [data.metropolegrenoble.fr](http://data.metrop
 
 ---
 
+### Utiliser une couche GeoJSON
+<iframe id="thegeojsonsonmap" src="demos/demo6.html" style="width:100%; height:200px;"></iframe>
+
+```JS
+var geojsonFeature = {
+    'type': 'Feature',
+    'properties': {
+        'name': 'Espace Vertical - ev3',
+        'leisure': 'sports_centre',
+        'popupContent': 'Une salle fantastique !'
+    },
+    'geometry': {
+        'type': 'Point',
+        'coordinates': [5.7035638, 45.1844921]
+    }
+};
+L.geoJson(geojsonFeature).addTo(map);
+```
+
+Vous noterez la différence Lon/Lat (ici) vs Lat/Lon (leaflet)
+
+---
+
+### Utiliser un fichier GeoJSON
+<iframe id="thegeojsonsonmap" src="demos/demo7.html" style="width:100%; height:350px;"></iframe>
+
+```HTML
+<script src="//rawgit.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js"></script>  
+```
+
+```JS
+var geojsonLayer = new L.GeoJSON.AJAX('http://metromobilite.fr/data/Carto/Statique/velo.geojson').addTo(map);
+```
+
+---
+
 # Plugins
 
-- heatmap : http://leaflet.github.io/Leaflet.heat/demo/
+- heatmap : [leaflet.github.io/Leaflet.heat/demo/](http://leaflet.github.io/Leaflet.heat/demo/)<!-- .element: target="_blank" -->
 - markercluster
 - un autre
-- lien vers les Plugins
+- les [Plugins leaflet](http://leafletjs.com/plugins.html)<!-- .element: target="_blank" -->
 
 ---
 
 # Liens
-- leafletjs : http://leafletjs.com<!-- .element: target="_blank" -->
-- fonds de plan : http://leaflet-extras.github.io/leaflet-providers/preview/<!-- .element: target="_blank" -->
+- leaflet : [leafletjs.com](http://leafletjs.com)<!-- .element: target="_blank" -->
+- fonds de plan : [leaflet-providers](http://leaflet-extras.github.io/leaflet-providers/preview/)<!-- .element: target="_blank" -->
 
 ---
 
 #Cool maps
-- http://nimianlegends.com/empires/ <!-- .element: target="_blank" -->
-- http://windyty.com/<!-- .element: target="_blank" -->
+- [nimianlegends.com/empires](http://nimianlegends.com/empires/) <!-- .element: target="_blank" -->
+- [windyty.com](http://windyty.com/)<!-- .element: target="_blank" -->
