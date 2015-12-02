@@ -95,11 +95,41 @@ polygon.bindPopup('Je suis un  polygone.');
 
 ---
 
-### Geojson
+### debug
+<iframe id="aaaaiframedebug" src="demos/demo5.html" style="width:100%; height:350px;"></iframe>
+
+dans l'`iframe aaaaiframedebug`
+
+```JS
+map.getCenter();
+map.getBounds();
+map.getZoom();
+map.getPixelBounds();
+```
 
 ---
 
-### debug
+### actions
+<iframe id="aaaaiframeaction" src="demos/demo1.html" style="width:100%; height:350px;"></iframe>
+
+dans l'`iframe aaaaiframeaction`
+
+```JS
+map.setView(L.latLng(50, 2), 5);
+var popup = L.popup().setLatLng([51.52145, -0.20312]);
+popup.setContent('Je suis une pauvre popup solitaire loin de chez elle');
+popup.openOn(map);
+
+```
+
+---
+
+### Geojson
+Ce que nous allons faire, utiliser des fichiers `geojson` et les afficher ainsi
+
+<iframe width="700" height="400" src="http://data.beta.metropolegrenoble.fr/dataset/pistes-cyclables/resource/e03a8056-ad7f-4000-873a-a0b382d8650a/view/e374e2b4-b9bb-4176-a0ee-7c2c4113f929" frameBorder="0"></iframe>
+
+Source de données pour ce soir : [data.metropolegrenoble.fr](http://data.metropolegrenoble.fr)<!-- .element: target="_blank" -->
 
 ---
 
