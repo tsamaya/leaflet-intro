@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <style type="text/css">
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    html,
+    body,
+    #map {
+      height: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+</head>
+
+<body>
+  <div id="map"></div>
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <script src="//rawgit.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js"></script>
+  <script src="http://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+  <script>
+    var map = L.map('map').setView([45.18478, 5.73134], 13);
+    L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      maxZoom: 15,
+      attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+    }).addTo(map);
+
+    var markers = new L.MarkerClusterGroup();
+
+    var geojsonLayer = new L.GeoJSON.AJAX('https://gist.githubusercontent.com/tsamaya/d5d9b55f45dff404d5e8/raw/80c514ebdf15db70e053a9df9175ee63616d206d/arceaux.geojson', {
+      pointToLayer: function(feature, latlng) {
+        var marker = L.marker(latlng);
+        markers.addLayer(marker);
+        return marker;
+      },
+      onEachFeature: bindPopUp
+    });
+    map.addLayer(markers);
+
+    // popup Function(feature, layer)
+    function bindPopUp(f, l) {
+      var content = "<table class=\"marker-properties\"><tbody>";
+      var out = [];
+      var regexp = new RegExp('^http');
+      var value;
+      if (f.properties) {
+        for (var key in f.properties) {
+          if (regexp.test(f.properties[key])) {
+            value = "<a href=\"" + f.properties[key] + "\">" + f.properties[key] + "</a>";
+          } else {
+            value = f.properties[key];
+          }
+          out.push("<tr class=\"unchanged\"><th>" + key + "</th><td>" + value);
+        }
+        content = content + out.join("</td></tr>") + "</tbody></table>";
+        l.bindPopup(content);
+      }
+    }
+  </script>
+</body>
+
+</html>

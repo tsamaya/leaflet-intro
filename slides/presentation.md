@@ -234,6 +234,32 @@ var geojsonLayer = new L.GeoJSON.AJAX('https://gist.githubusercontent.com/tsamay
   }
 });
 ```
+
+---
+
+### marker cluster
+
+<iframe id="theMCmap" src="demos/demo9.html" style="width:100%; height:350px;"></iframe>
+
+```HTML
+<link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+
+<script src="http://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+```
+
+```JS
+var markers = new L.MarkerClusterGroup();
+
+var geojsonLayer = new L.GeoJSON.AJAX('https://gist.githubusercontent.com/tsamaya/d5d9b55f45dff404d5e8/raw/80c514ebdf15db70e053a9df9175ee63616d206d/arceaux.geojson', {
+  pointToLayer: function(feature, latlng) {
+    var marker = L.marker(latlng);
+    markers.addLayer(marker);
+    return marker;
+  }
+});
+map.addLayer(markers);
+```
 ---
 
 # Liens
