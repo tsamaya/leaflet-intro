@@ -14,7 +14,7 @@ Vous pouvez suivre cette présentation en ligne
 
 Recommandations
 
-- éditeur de texte : [atom.io](http://atom.io)<!-- .element: target="_blank" -->
+- éditeur de texte : [atom.io](http://atom.io)<!-- .element: target="_blank" -->, [brackets](http://brackets.io/)<!-- .element: target="_blank" -->
 - navigateur : [chrome](https://www.google.fr/chrome/browser/desktop/)<!-- .element: target="_blank" -->
 - serveur web
 - sinon un compte [github](http://github.com)<!-- .element: target="_blank" --> pour utiliser
@@ -40,9 +40,8 @@ Recommandations
       margin: 0;
     }
 
-    #map { height: 100%; }
-
-    html, body {
+    html, body, #map {
+      height: 100%;
       height: 100%;
     }
   </style>
@@ -214,6 +213,27 @@ var geojsonLayer = new L.GeoJSON.AJAX('http://metromobilite.fr/data/Carto/Statiq
 - markercluster<!-- .element: target="_blank" -->
 - les [Plugins leaflet](http://leafletjs.com/plugins.html)<!-- .element: target="_blank" -->
 
+---
+
+### heatmap
+
+<iframe id="theheatmap" src="demos/demo8.html" style="width:100%; height:350px;"></iframe>
+
+```HTML
+<script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+```
+
+```JS
+var heat = L.heatLayer([], {
+  radius : 10
+}).addTo(map);
+
+var geojsonLayer = new L.GeoJSON.AJAX('https://gist.githubusercontent.com/tsamaya/d5d9b55f45dff404d5e8/raw/80c514ebdf15db70e053a9df9175ee63616d206d/arceaux.geojson', {
+  onEachFeature: function(f,l) {
+      heat.addLatLng(l.getLatLng());
+  }
+});
+```
 ---
 
 # Liens

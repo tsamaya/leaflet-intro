@@ -10,7 +10,6 @@
 
     html, body, #map {
       height: 100%;
-      height: 100%;
     }
   </style>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
@@ -18,29 +17,25 @@
 <body>
   <div id="map"></div>
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <script src="//rawgit.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js"></script>
+  <script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
   <script>
     var map = L.map('map').setView([45.18478, 5.73134], 13);
     L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
         maxZoom: 15,
         attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
     }).addTo(map);
-    var marker = L.marker([45.18478, 5.73134]).addTo(map);
 
-    var circle = L.circle([45.18521, 5.75611], 500, {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5
+    var heat = L.heatLayer([], {
+      radius : 10
     }).addTo(map);
 
-    var polygon = L.polygon([
-        [45.20091, 5.65487],
-        [45.18276, 5.68182],
-        [45.17562, 5.65418]
-      ]).addTo(map);
+    var geojsonLayer = new L.GeoJSON.AJAX('https://gist.githubusercontent.com/tsamaya/d5d9b55f45dff404d5e8/raw/80c514ebdf15db70e053a9df9175ee63616d206d/arceaux.geojson', {
+      onEachFeature: function(f,l) {
+          heat.addLatLng(l.getLatLng());
+      }
+    });
 
-    marker.bindPopup('<b>Hello from Cowork in Grenoble!</b><br>Je suis une popup').openPopup();
-    circle.bindPopup('Je suis un cercle');
-    polygon.bindPopup('Je suis un  polygone');
 
   </script>
 </body>
