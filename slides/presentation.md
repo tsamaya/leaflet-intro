@@ -260,6 +260,7 @@ var geojsonLayer = new L.GeoJSON.AJAX('https://gist.githubusercontent.com/tsamay
 });
 map.addLayer(markers);
 ```
+
 ---
 
 # Liens
