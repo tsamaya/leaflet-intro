@@ -56,7 +56,7 @@ Recommandations
 </body>
 </html>
 ```
-- jsbin : [jsbin.com/fojeta](http://jsbin.com/fojeta)<!-- .element: target="_blank" -->
+- jsbin : [jsbin.com/fojeta](http://jsbin.com/fojeta/edit?html,css,js,output)<!-- .element: target="_blank" -->
 - gist : [gist/593362928b8ee8c185de](https://gist.github.com/tsamaya/593362928b8ee8c185de)<!-- .element: target="_blank" -->
 - bl.ocks.org [bl.ocks.org/593362928b8ee8c185de](http://bl.ocks.org/tsamaya/593362928b8ee8c185de)<!-- .element: target="_blank" -->
 
@@ -101,7 +101,7 @@ map.on('click', onMapClick);
 ### Cercle
 <iframe id="thecirclemap" src="demos/demo3.html" style="width:100%; height:350px;"></iframe>
 ```JS
-var circle = L.circle([51.508, -0.11], 500, {
+var circle = L.circle([45.18521, 5.75611], 500, {
     color: 'red',
     fillColor: '#f03',
     fillOpacity: 0.5
@@ -180,7 +180,7 @@ var geojsonFeature = {
     'type': 'Feature',
     'properties': {
         'name': 'Espace Vertical - ev3',
-        'leisure': 'sports_centre',
+        'leisure': 'sports_center',
         'popupContent': 'Une salle fantastique !'
     },
     'geometry': {
@@ -274,3 +274,11 @@ map.addLayer(markers);
 #Cool maps
 - [nimianlegends.com/empires](http://nimianlegends.com/empires/) <!-- .element: target="_blank" -->
 - [windyty.com](http://windyty.com/)<!-- .element: target="_blank" -->
+
+---
+
+## Challenges
+
+- leaflet bien sûr
+- données : densité de population
+- viz : chartjs et ou d3
