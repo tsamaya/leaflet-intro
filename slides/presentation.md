@@ -140,9 +140,11 @@ Exécuter ce code dans la console pour l'`iframe aaaaiframedebug` (CTRL+SHIT+I) 
 
 ```JS
 map.getCenter();
-map.getBounds();
 map.getZoom();
-map.getPixelBounds();
+map.setView(circle.getLatLng());
+map.setMaxBounds(polygon.getBounds());
+polygon.openPopup();
+map.setMaxBounds(null);
 ```
 
 ---
