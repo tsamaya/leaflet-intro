@@ -6,7 +6,7 @@
     <title>Densité de population</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
     <!--
-    This example is coming from examples picked at https://github.com/muxlab/map-effects-100 
+    This example is coming from examples picked at https://github.com/muxlab/map-effects-100
     -->
     <style>
         html, body, #map {
@@ -100,7 +100,7 @@ $(function() {
 
 
     L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png', {
-      attributions: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>, and idea is coming from <a href="http://muxlab.github.io/">MUXLab</a>'
     }).addTo(map);
 
     // Filter chart to only show features in current map bounds
