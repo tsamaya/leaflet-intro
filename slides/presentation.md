@@ -1,9 +1,5 @@
 # Introduction à leafletjs
 ## Maptime Alpes 2015
-Arnaud Ferrand
-
-[![octocat](images/github.png)<!-- .element style="border: 0; box-shadow: none;" -->](https://github.com/tsamaya/)<!-- .element: target="_blank" -->[![octocat](images/twitter.png)<!-- .element style="border: 0; box-shadow: none;" -->](https://twitter.com/arferrand/)<!-- .element: target="_blank" -->
-
 ---
 
 Vous pouvez suivre cette présentation en ligne
