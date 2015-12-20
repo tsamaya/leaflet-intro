@@ -1,5 +1,7 @@
 # Introduction à leafletjs
-## Maptime Alpes 2015
+## Maptime Alpes
+### Décembre 2015
+
 ---
 
 Vous pouvez suivre cette présentation en ligne
@@ -12,10 +14,10 @@ Recommandations
 
 - éditeur de texte : [atom.io](http://atom.io)<!-- .element: target="_blank" -->, [brackets](http://brackets.io/)<!-- .element: target="_blank" -->
 - navigateur : [chrome](https://www.google.fr/chrome/browser/desktop/)<!-- .element: target="_blank" -->
-- serveur web
-- sinon un compte [github](http://github.com)<!-- .element: target="_blank" --> pour utiliser
-  - [jsbin](http://jsbin.com)<!-- .element: target="_blank" -->
-  - [gist](http://gist.github.com)<!-- .element: target="_blank" --> et http://bl.ocks.org/USER<!-- .element: target="_blank" -->
+- utiliser un serveur web
+  - sinon avec un compte [github](http://github.com)<!-- .element: target="_blank" --> :
+    - [jsbin](http://jsbin.com)<!-- .element: target="_blank" -->
+    - [gist](http://gist.github.com)<!-- .element: target="_blank" --> et http://bl.ocks.org/USER<!-- .element: target="_blank" -->
 
 ---
 
@@ -279,3 +281,6 @@ map.addLayer(markers);
 - leaflet bien sûr
 - données : densité de population
 - viz : chartjs et ou d3
+
+
+[voir](./challenges/)<!-- .element: target="_blank" --> une solution
