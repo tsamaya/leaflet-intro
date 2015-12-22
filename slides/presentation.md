@@ -211,7 +211,7 @@ var geojsonLayer = new L.GeoJSON.AJAX('http://metromobilite.fr/data/Carto/Statiq
 
 - Nous venons d'utiliser [GeoJSON.ajax](https://github.com/calvinmetcalf/leaflet-ajax)<!-- .element: target="_blank" -->
 - heatmap : [leaflet.github.io/Leaflet.heat/demo/](http://leaflet.github.io/Leaflet.heat/demo/)<!-- .element: target="_blank" -->
-- markercluster<!-- .element: target="_blank" -->
+- markercluster : [Leaflet.markerclusterr](https://github.com/Leaflet/Leaflet.markercluster)<!-- .element: target="_blank" -->
 - les [Plugins leaflet](http://leafletjs.com/plugins.html)<!-- .element: target="_blank" -->
 
 ---
